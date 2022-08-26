@@ -1,12 +1,11 @@
 import pydash
 
-from utils.strings import (
+from utils import (
     pretty_print_enum,
     pretty_print_enums,
     get_year,
     map_by_keywords
 )
-from utils.lambdas import get_bucket_contents
 
 ############################################################
 # Transform trial record
@@ -338,13 +337,9 @@ def should_include_trial(final_record):
     return has_valid_start_date
 
 ############################################################
-# Loads data from s3 bucket; transforms.
+# Transforms data
 ############################################################
-def transform(payload):
-    trials = get_bucket_contents(payload["bucket"], payload["object_name"])
-
-    pivotal_trial_ids = payload.get("pivotalTrialIds", [])
-
+def transform(trials, pivotal_trial_ids):
     print(f'Got trials ({len(trials)}). Transforming.')
     transformed = list(map(
         lambda trial: create_final_record(trial, pivotal_trial_ids),
