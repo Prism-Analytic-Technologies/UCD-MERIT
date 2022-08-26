@@ -40,7 +40,7 @@ We search for canonical entity in the applicable clinicaltrials.gov fields and c
 - select the most specific match based on
   - an exclusion list (elimiating highly non-specific matches on NCI entities like 'Disease or Disorder')
   - a de-prioritization list (for better-than-nothing but still non-specific entries like 'Digestive System Disorder')
-  - term length (i.e. longer terms are generally considered more specfic)
+  - term length (i.e. longer terms are generally considered more specific)
 
 Prior to matching, certain invalid synonyms are suppressed, e.g. from NCI
 - 'breast cancer' is listed as a synonym for 'childhood breast carcinoma'
@@ -50,7 +50,7 @@ Prior to matching, certain invalid synonyms are suppressed, e.g. from NCI
 ##### Entity-Specific Approach
 - Indications are mapped from the following trial record elements
   - `FullStudy->Study->ProtocolSection->ConditionsModule->ConditionList`
-  - `FullStudy->Study->ProtocolSection->ConditionsModule->Keyword List`
+  - `FullStudy->Study->ProtocolSection->ConditionsModule->KeywordList`
   - `FullStudy->Study->ProtocolSection->IdentificationModule->OfficialTitle`
 - Interventions are mapped from the following trial record elements
   - `FullStudy->Study->ProtocolSection->ArmsInterventionsModule->InterventionList->Intervention`
