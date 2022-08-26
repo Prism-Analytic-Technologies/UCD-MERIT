@@ -22,7 +22,7 @@ This API consists of a normalized and enriched copy of clinicaltrials.gov.
 
 #### General Process*
 
-(will be true by the time of publication)
+(will be true by the time of publication - there is currently some manual process involved)
 
 On a nightly basis, all clinicaltrial.gov records are pulled and transformed with heavily unit-tested python code. Enrichment sources are pulled anywhere from weekly (MeSH and NCI) to monthly (NCATS). Automated verification tests are run post-upload.
 
@@ -48,11 +48,11 @@ Prior to matching, certain invalid synonyms are suppressed, e.g. from NCI
 - 'II' is listed as a synonym for 'ISS Stage II Plasma Cell Myeloma'
 
 ##### Entity-Specific Approach
-- Indications are mapped off of trial elements
+- Indications are mapped from the following trial record elements
   - `FullStudy->Study->ProtocolSection->ConditionsModule->ConditionList`
   - `FullStudy->Study->ProtocolSection->ConditionsModule->Keyword List`
-  - Official title
-- Interventions are mapped off of trial elements
+  - `FullStudy->Study->ProtocolSection->IdentificationModule->OfficialTitle`
+- Interventions are mapped from the following trial record elements
   - `FullStudy->Study->ProtocolSection->ArmsInterventionsModule->InterventionList->Intervention`
 
 
