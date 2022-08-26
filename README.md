@@ -24,7 +24,7 @@ This API consists of a normalized and enriched copy of clinicaltrials.gov.
 
 (will be true by the time of publication)
 
-On a nightly basis, all clinicaltrial.gov records are pulled and transformed with heavily unit-tested python code. Enrichment sources are pulled anywhere from weekly (MeSH and NCI) to monthly (NCATS). Post upload, automated verification tests are run.
+On a nightly basis, all clinicaltrial.gov records are pulled and transformed with heavily unit-tested python code. Enrichment sources are pulled anywhere from weekly (MeSH and NCI) to monthly (NCATS). Automated verification tests are run post-upload.
 
 #### Enrichment
 
